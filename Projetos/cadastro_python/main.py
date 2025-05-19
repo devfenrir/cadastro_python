@@ -80,7 +80,7 @@ if __name__ == "__main__":
                                 arquivo.write(json_string)
 
                         case "N":
-                            print("Retornando ao menu...")
+                            funcoes.retorna_menu()
 
                         case _:
                             print(f"{procedimento}, é uma opção inválida!")
@@ -91,8 +91,41 @@ if __name__ == "__main__":
             case 4:
                 funcoes.apresentacao_setor(4)
 
+                if os.path.exists(CAMINHO_ARQUIVO) and os.path.getsize(CAMINHO_ARQUIVO) > 0:
+                    with open(CAMINHO_ARQUIVO, "r", encoding="UTF-8") as arquivo:
+                        print(arquivo.read())
+                else:
+                    print("Sistema de cadastro vázio até o momento...\n")
+                    funcoes.retorna_menu()
+
             case 5:
                 funcoes.apresentacao_setor(5)
+
+                consulte_usuario = input("Digite o nome do usuário: ")
+
+                if consulte_usuario in usuarios_cadastrados_sistema.keys():
+                    novo_nome = input("Digite o novo nome do usuário: ")
+
+                    email_novo = input("Digite o novo email: ")
+                    celular_novo = input("Digite o novo celular: ")
+                    profissao_nova = input("Digite a nova profissão: ")
+
+                    usuarios_cadastrados_sistema.pop(consulte_usuario)
+
+                    usuarios_cadastrados_sistema[novo_nome] = {
+                        "Nome": novo_nome,
+                        "Email": email_novo,
+                        "Celular": celular_novo,
+                        "Profissão": profissao_nova
+                    }
+
+                    with open(CAMINHO_ARQUIVO, "w", encoding="UTF-8") as arquivo:
+                        json_string = json.dumps(usuarios_cadastrados_sistema, indent=4, ensure_ascii=False)
+                        arquivo.write(json_string)
+
+                else:
+                    print("Usuário não cadastrado!")
+                    funcoes.retorna_menu()
 
             case 6:
                 funcoes.apresentacao_setor(6)

@@ -28,3 +28,6 @@ def confirmacao_cadastro():
 
 def identifica_duplicata():
     print("\nUsuário já cadastrado!\n")
+
+def retorna_menu():
+    print("Retornando ao menu...")
