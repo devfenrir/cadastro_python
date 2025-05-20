@@ -58,9 +58,12 @@ if __name__ == "__main__":
                 if consulta_nome in usuarios_cadastrados_sistema:
                     print(f"{consulta_nome} encontrado no sistema de cadastro!")
                     info = usuarios_cadastrados_sistema[consulta_nome]
+                    print(f"{{")
+                    print(f"Nome: {info['Nome']}")
                     print(f"Email: {info['Email']}")
                     print(f"Celular: {info['Celular']}")
                     print(f"Profissão: {info['Profissão']}")
+                    print(f"}}")
                 else:
                     print(f"{consulta_nome}, não encontrado no sistema!")
 
@@ -122,6 +125,8 @@ if __name__ == "__main__":
                         "Celular": celular_novo,
                         "Profissão": profissao_nova
                     }
+
+                    print("Informação do usuário atualizada!")
 
                     with open(CAMINHO_ARQUIVO, "w", encoding="UTF-8") as arquivo:
                         json_string = json.dumps(usuarios_cadastrados_sistema, indent=4, ensure_ascii=False)
