@@ -4,7 +4,7 @@ import os
 
 opcao_digitada = -1
 
-CAMINHO_ARQUIVO = "C:\\Users\\Felipe\\Desktop\\Projetos\\cadastro_python\\cadastro_sistema.txt"
+CAMINHO_ARQUIVO = "CAMINHO_DO_ARQUIVO"
 
 if __name__ == "__main__":
 
