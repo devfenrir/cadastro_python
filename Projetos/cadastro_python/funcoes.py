@@ -27,7 +27,7 @@ def confirmacao_cadastro():
     print("\nO usuário foi cadastrado no sistema!\n")
 
 def identifica_duplicata():
-    print("\nUsuário já cadastrado!\n")
+    print("\nUsuário já cadastrado no sistema!\n")
 
 def retorna_menu():
     print("Retornando ao menu...")
