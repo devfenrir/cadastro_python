@@ -18,7 +18,11 @@ if __name__ == "__main__":
 
         funcoes.exibir_apresentacao()
         funcoes.exibir_menu_opcoes()
-        opcao_digitada = int(input("Digite uma opção: "))
+
+        try:
+            opcao_digitada = int(input("Digite uma opção: "))
+        except:
+            print(f"Você inseriu um valor inválido\n")
 
         match opcao_digitada:
             case 1:
