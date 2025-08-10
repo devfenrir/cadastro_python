@@ -23,5 +23,3 @@ Este projeto é um sistema simples de **cadastro de usuários**, feito em **Pyth
 - Estruturas de dados: dicionários
 
 ---
-
-## 🗂️ Estrutura do Projeto
